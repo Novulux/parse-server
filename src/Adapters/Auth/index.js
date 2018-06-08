@@ -1,5 +1,6 @@
 import loadAdapter from '../AdapterLoader';
 
+const okta = require('./okta')
 const facebook = require('./facebook');
 const facebookaccountkit = require('./facebookaccountkit');
 const instagram = require("./instagram");
@@ -27,6 +28,7 @@ const anonymous = {
 }
 
 const providers = {
+  okta,
   facebook,
   facebookaccountkit,
   instagram,
