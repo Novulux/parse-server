@@ -243,6 +243,7 @@ RestWrite.prototype.handleAuthDataValidation = function(authData) {
     if (authData[provider] === null) {
       return Promise.resolve();
     }
+    console.log(provider);
     const validateAuthData = this.config.authDataManager.getValidatorForProvider(provider);
     if (!validateAuthData) {
       throw new Parse.Error(Parse.Error.UNSUPPORTED_SERVICE,
@@ -281,6 +282,7 @@ RestWrite.prototype.findUsersWithAuthData = function(authData) {
 
 RestWrite.prototype.handleAuthData = function(authData) {
   let results;
+  console.log(authData);
   return this.findUsersWithAuthData(authData).then((r) => {
     results = r.filter((user) => {
       return !this.auth.isMaster && user.ACL && Object.keys(user.ACL).length > 0;
