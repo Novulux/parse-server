@@ -5,7 +5,7 @@ const authenticationLoader = require('../src/Adapters/Auth');
 const path = require('path');
 
 describe('AuthenticationProviders', function() {
-  ["facebook", "facebookaccountkit", "github", "instagram", "google", "linkedin", "meetup", "twitter", "janrainengage", "janraincapture", "vkontakte"].map(function(providerName){
+  ["okta, facebook", "facebookaccountkit", "github", "instagram", "google", "linkedin", "meetup", "twitter", "janrainengage", "janraincapture", "vkontakte"].map(function(providerName){
     it("Should validate structure of " + providerName, (done) => {
       const provider = require("../src/Adapters/Auth/" + providerName);
       jequal(typeof provider.validateAuthData, "function");
